@@ -119,24 +119,16 @@ let d = document.querySelector(".d");
 //Add event for each operator number to execute the right function
 
 a.addEventListener('click', function(){
-    operand1 = evil(result.innerHTML);
-    op = "+";
-    clearDisplay();
+    populateDisplay(result, "+");
 });
 s.addEventListener('click', function(){
-    operand1 = evil(result.innerHTML);
-    op = "-";
-    clearDisplay();
+    populateDisplay(result, "-");
 });
 m.addEventListener('click', function(){
-    operand1 = evil(result.innerHTML);
-    op = "*";
-    clearDisplay();
+    populateDisplay(result, "*");
 });
 d.addEventListener('click', function(){
-    operand1 = evil(result.innerHTML);
-    op = "/";
-    clearDisplay();
+    populateDisplay(result, "/");
 });
 
 //a function that will clear the display
@@ -144,12 +136,24 @@ function clearDisplay(){
     result.innerHTML = 0;
 }
 
+//create the clear variable and adding a event
+let clear = document.getElementById("clear");
+clear.addEventListener('click', () => clearDisplay())
+
 //Now the equal button wich will execute the operation
 let equal = document.getElementById('equal');
 equal.addEventListener('click', function(){
-    operand2 = evil(result.innerHTML);
-    let resultado = operate(op, operand1, operand2);
-    result.innerHTML = resultado;
+    let newResult = evil(result.innerHTML);
+    result.innerHTML = newResult;
 });
 
-operate
+//function backspace so the user can undo if they click the wrong number.
+function backSpace(resu){
+    resu.innerHTML = resu.innerHTML.substring(0,result.innerHTML.length-1);
+    if (resu.innerHTML.length == 0) resu.innerHTML = 0;
+}
+
+let bS = document.querySelector(".back-space");
+bS.addEventListener('click',function(){
+    backSpace(result);
+});
