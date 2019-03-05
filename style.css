@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Century Gothic,CentutyGothic, AppleGothic,sans-serif;
+}
+
+body{
+    background-color: #360404;
+}
+
+.container{
+    background-color: #ededed;
+    width: fit-content;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.keys{
+    display: flex;
+}
+
+.display{
+    padding: 18px 18px 0px 18px;
+}
+
+.numbers{
+    padding: 18px 9px 18px 18px;
+}
+
+.operators{
+    padding: 18px 9px 18px 9px;
+}
+
+#result{
+    padding: 9px;
+    background-color: #555;
+    color: #ededed;
+}
+
+.operators button{
+    display: block;
+    width: 54px;
+    height: 54px;
+    padding: 9px 15px;
+    background-color: #8b7baa;
+    border: none;
+}
+
+.numbers div{
+    text-align: center;
+}
+
+.numbers button{
+    border: 0px;
+    background-color: #29295a;
+    color: #ededed;
+}
+
+button{
+    padding: 15px 24px;
+    margin: 2px;
+    font-size: 20px;
+}
